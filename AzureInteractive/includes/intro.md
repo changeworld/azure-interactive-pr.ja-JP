@@ -16,23 +16,23 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/26/2018
 ms.locfileid: "40079459"
 ---
-このチュートリアルでは、HTML ベースのユーザー インターフェイスを表示するシンプルな Web アプリケーションをデプロイします。 サーバーレス バックエンドにより、アプリケーションで画像をアップロードし、その画像について説明するキャプションを自動的に取得できます。
+このチュートリアルでは、HTML ベースのユーザー インターフェイスを提供するシンプルな Web アプリケーションをデプロイします。サーバーレス バックエンドにより、アプリケーションで画像をアップロードし、その画像について説明するキャプションを自動的に生成できます。
 
 ![Web アプリの実行](media/functions-first-serverless-web-app/0-app-screenshot-finished.png)
 
-次の図は、アプリケーションによって使用されている Azure サービスを示しています。
+次の図は、アプリケーションで使用されている Azure サービスを示しています。
 
-1. Blob Storage は静的 Web コンテンツ (HTML、CSS、JS) を提供し、画像が格納されます。
-2. Azure Functions によって、画像のアップロード、サイズ変更、およびメタデータ ストレージが管理されます。
-3. Cosmos DB には、画像のメタデータが格納されます。
-4. Logic Apps により、Computer Vision API から画像のキャプションが取得されます。
-5. Azure Active Directory によりユーザー認証が管理されます。
+1. Blob Storage は静的 Web コンテンツ (HTML、CSS、JS) を配信し、画像を格納します。
+2. Azure Functions は、画像のアップロード、サイズ変更、およびメタデータ ストレージを管理します。
+3. Cosmos DB は、画像のメタデータを格納します。
+4. Logic Apps は Computer Vision API から画像のキャプションを取得します。
+5. Azure Active Directory はユーザー認証を管理します。
 
 ![ソリューションのアーキテクチャ図](media/functions-first-serverless-web-app/0-architecture.jpg)
 
-このチュートリアルで学習する内容は次のとおりです。
+このチュートリアルでは、以下の内容を学習します。
 > [!div class="checklist"]
-> * 静的な Web サイトとアップロードされた画像がホストされるように Azure Blob Storage を構成します。
+> * 静的 Web サイトとアップロードされた画像がホストされるように Azure Blob Storage を構成します。
 > * Azure Functions を使用して、画像を Azure Blob Storage にアップロードします。
 > * Azure Functions を使用して、画像のサイズを変更します。
 > * 画像のメタデータを Azure Cosmos DB に格納します。
