@@ -177,6 +177,8 @@ Cosmos DB の出力バインディングを使用すると、 Azure Functions �
 
     ![アップロードした画像のドキュメントが表示されているデータ エクスプローラー](media/functions-first-serverless-web-app/4-data-explorer.png)
 
+
+
 ## <a name="summary"></a>まとめ
 
 この章では、 Cosmos DB アカウントとデータベース、およびコレクションを作成する方法を学習しました。 Cosmos DB のバインディングを使用して、Cosmos DB コレクション内に画像のメタデータを保存および取得する方法も学習しました。次に、 Microsoft Cognitive Services を使用して、アップロードした各画像のキャプションを自動的に生成する方法を学習します。
