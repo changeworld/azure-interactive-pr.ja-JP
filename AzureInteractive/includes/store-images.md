@@ -42,6 +42,7 @@ Cosmos DB アカウントは、 Cosmos DB データベースを含む Azure リ�
     az cosmosdb collection create -g first-serverless-app -n <cosmos db account name> --db-name imagesdb --collection-name images --throughput 400
     ```
 
+
 ## <a name="save-a-document-to-cosmos-db-when-a-thumbnail-is-created"></a>サムネイル作成時にドキュメントを Cosmos DB に保存する
 
 Cosmos DB の出力バインディングを使用すると、 Azure Functions から Cosmos DB コレクション内にドキュメントを作成できます。以下の手順で、 **ResizeImage** 関数の Cosmos DB 出力バインディングを設定し、保存するドキュメント (オブジェクト) を返すようにこの関数を変更します。
