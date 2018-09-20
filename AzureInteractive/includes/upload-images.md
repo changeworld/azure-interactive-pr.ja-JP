@@ -16,13 +16,13 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/26/2018
 ms.locfileid: "40079471"
 ---
-作成しているアプリケーションはフォト ギャラリーです。クライアントサイドの JavaScript を使用して API を呼び出し、画像をアップロードおよび表示します。この章では、画像をアップロードするための時間制限付き URL を生成するサーバレスファンクションを使用し、 API を作成します。この Web アプリケーションでは、[Blob Storage REST API](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api) を使用し、生成された URL　を使用し、 Blob Storage に画像をアップロードします。
+作成しているアプリケーションはフォト ギャラリーです。クライアントサイドの JavaScript を使用して API を呼び出し、画像をアップロードおよび表示します。この章では、画像をアップロードするための時間制限付き URL を生成するサーバレスファンクションを使用し、 API を作成します。この Web アプリケーションでは、[Blob Storage REST API](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api) を使用し、生成された URL を使用し、Blob Storage に画像をアップロードします。
 
 ## <a name="create-a-blob-storage-container-for-images"></a>画像用の Blob Storage コンテナーを作成する
 
 アプリケーションには、画像をアップロードしてホストするための別のストレージ コンテナーが必要です。
 
-1. Cloud Shell (bash) にまだサインインしていることを確認してください。そうでない場合は、**[Enter focus mode]\(フォーカス モードにする\)** を選択し、 Cloud Shell ウィンドウを開きます。
+1. Cloud Shell (bash) に現在もサインインしていることを確認してください。そうでない場合は、**[Enter focus mode]\(フォーカス モードにする\)** を選択し、 Cloud Shell ウィンドウを開きます。
 
 1.  すべての BLOB へのパブリック アクセスを持つストレージ アカウント内に **images** という名前の新しいコンテナーを作成します。
 
@@ -32,7 +32,7 @@ ms.locfileid: "40079471"
 
 ## <a name="create-an-azure-function-app"></a>Azure Function App の作成
 
-Azure Functions はサーバーレスファンクションを実行するためのサービスです。サーバーレスファンクションは、 HTTP リクエストや BLOB がストレージ コンテナーに作成されるといったイベントをトリガーにして実行 (呼び出す)できます。
+Azure Functions はサーバーレスファンクションを実行するためのサービスです。サーバーレスファンクションは、 HTTP リクエストや BLOB がストレージ コンテナーに作成されるといったイベントをトリガーにして実行 (呼び出し)できます。
 
 Azure Functions アプリは、 1 つ以上のサーバーレスファンクションのためのコンテナーです。
 
@@ -45,7 +45,7 @@ Azure Functions アプリは、 1 つ以上のサーバーレスファンクシ�
 
 ## <a name="create-an-http-triggered-serverless-function"></a>HTTP リクエストによってトリガーされるサーバーレスファンクションを作成する
 
-フォト ギャラリー Web アプリケーションでは、サーバーレスファンクションへの HTTP リクエストにより、画像を Blob storage に安全にアップロードするための時間制限付き URL が生成されます。この関数は HTTP リクエストによってトリガーされ、、 Azure Storage SDK を使用し、セキュアな URL を生成して返します。
+フォト ギャラリー Web アプリケーションでは、サーバーレスファンクションへの HTTP リクエストにより、画像を Blob storage に安全にアップロードするための時間制限付き URL が生成されます。この関数は HTTP リクエストによってトリガーされ、Azure Storage SDK を使用し、セキュアな URL を生成して返します。
 
 1. 関数アプリを作成後、 Azure portal の検索ボックスでアプリを検索し、クリックして開きます。
 
@@ -63,9 +63,9 @@ Azure Functions アプリは、 1 つ以上のサーバーレスファンクシ�
 
     | Setting      |  推奨値   | 説明                                        |
     | --- | --- | ---|
-    | **言語** | C# または JavaScript | 使用したい言語を選択 |
-    | **関数名の指定** | GetUploadUrl | アプリケーションが関数を検出できるように、この名前を正確に表示されているとおりに入力します |
-    | **承認レベル** | Anonymous | 関数にパブリックにアクセスできるようにします。 |
+ 　| **言語** | C# または JavaScript | 使用したい言語を選択 。|
+　 | **関数名の指定** | GetUploadUrl | アプリケーションが関数を検出できるように、この名前を正確に表示されているとおりに入力します。 |
+　 | **承認レベル** | Anonymous | 関数にパブリックにアクセスできるようにします。 |
 
     ![HTTP によってトリガーされる新しい関数の設定を入力する](media/functions-first-serverless-web-app/2-new-function-httptrigger.png)
 
@@ -144,7 +144,7 @@ Azure portal には、関数の作成と編集だけでなく、関数をテス�
 
     ![関数が正常に実行されたことを示すログ](media/functions-first-serverless-web-app/2-test-function.png)
 
-## <a name="configure-cors-in-the-function-app"></a>関数アプリでの CORS を設定する
+## <a name="configure-cors-in-the-function-app"></a>関数アプリで CORS を設定する
 
 アプリのフロントエンドは Blob Storage でホストされているため、そのドメイン名は、Azure 関数アプリとは異なります。クライアントサイドの JavaScript が先ほど作成した関数を正常に呼び出すためには、関数アプリは、cross-origin resource sharing (CORS) 用に設定する必要があります。
 
@@ -176,7 +176,7 @@ Azure portal には、関数の作成と編集だけでなく、関数をテス�
 
 ## <a name="configure-cors-in-the-storage-account"></a>ストレージ アカウントで CORS を設定する
 
-アプリでは Blob Storage へのクライアントサイド JavaScript の呼び出しによって、ファイルをアップロードするため、ストレージ アカウントを CORS 用に設定する必要もあります。
+アプリでは、Blob Storage へのクライアントサイド JavaScript の呼び出しによってファイルをアップロードするため、ストレージ アカウントを CORS 用に設定する必要があります。
 
 1. 次のコマンドを実行して、すべてのアクセス元が、ファイルをストレージ アカウントにアップロードできるようにします。
 
@@ -262,7 +262,7 @@ Web アプリでは、 **settings.js** という名前のファイルから設�
 
 この時点で、ギャラリー アプリケーションは Blob Storage に画像をアップロードできますが、まだ画像を表示できません。後の章で作成するまだ存在しない `GetImages` 関数を呼び出そうとします。この呼び出しは失敗し、 Web ページには "分析中…" と表示されたままになりますが、選択する画像は正常にアップロードされます。
 
-画像が正常にアップロードされていることを確認するには、 Azure portal で **images** コンテナーの内容を確認します。
+画像が正しくアップロードされていることを確認するには、 Azure portal で **images** コンテナーの内容を確認します。
 
 1. ブラウザー ウィンドウで、アプリケーションにアクセスします。画像ファイルを選択し、アップロードします。アップロードが完了しますが、画像を表示する機能がまだ追加されていないため、アップロードした画像はアプリに表示されません (Web ページには "画像分析中..." と表示されたままになりますが、これは後で修正します)。
 
