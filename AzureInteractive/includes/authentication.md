@@ -63,7 +63,7 @@ Azure App Service 認証は、 Azure 関数アプリでターン キー認証の
 
     `window.authEnabled = true`
 
-    次のコマンドを使用するか、 Vim などのコマンド ライン エディターを使用して、変更を行い、結果を表示します。
+    次のコマンドを使用するか、 Vim などのコマンド ライン エディターを使用して変更を行い、結果を表示します。
 
     ```azurecli
     echo "window.authEnabled = true" >> settings.js
