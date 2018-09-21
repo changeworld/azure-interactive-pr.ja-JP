@@ -31,14 +31,14 @@ Azure App Service 認証は、 Azure 関数アプリでターン キー認証の
     | Setting      |  推奨値   | 説明                                        |
     | --- | --- | ---|
     | **App Service 認証** | On | 認証を有効にします。 |
-    | **Action when request is not authenticated (要求が認証されない場合のアクション)** | Azure Active Directory でのログイン | 構成済みの認証方法 (下記参照) を選択します。 |
-    | **認証プロバイダー** | 下記参照 | 下記参照 |
-    | **トークン ストア** | On | App Service でトークンの格納および管理を許可します。 |
-    | **[許可される外部リダイレクト URL]** | 作成したアプリケーションの URL。例: https://firstserverlessweb.z4.web.core.windows.net/ | App Service がユーザーの認証後に リダイレクトできる URL。 |
+    | **Action when request is not authenticated (要求が認証されない場合のアクション)** | Azure Active Directory でのログイン | 構成済みの認証方法 (下記) を選択します。 |
+    | **認証プロバイダー** | 以下を参照 | 以下を参照 |
+    | **トークン ストア** | On | App Service でトークンを格納および管理できるようになります。 |
+    | **[許可される外部リダイレクト URL]** | アプリケーションの URL。例: https://firstserverlessweb.z4.web.core.windows.net/ | ユーザーが認証された後に App Service からリダイレクトできる URL。 |
 
 1. **[Azure Active Directory]** を選択し **[Azure Active Directory の設定]** を表示します。
 
-    1. **[管理モード]** として **[簡易]** を選択し、以下の値を入力します。
+    1. **[管理モード]** として **[簡易]** を選択し、次の情報を入力します。
     
         | Setting      |  推奨値   | 説明                                        |
         | --- | --- | ---|
@@ -50,6 +50,7 @@ Azure App Service 認証は、 Azure 関数アプリでターン キー認証の
     ![[認証/承認] と Azure Active Directory の設定](media/functions-first-serverless-web-app/6-create-aad.png)
 
 1. **[Save]** をクリックします。
+
 
 ## <a name="modify-the-web-app-to-enable-authentication"></a>Web アプリを変更して認証を有効にする
 
@@ -81,6 +82,7 @@ Azure App Service 認証は、 Azure 関数アプリでターン キー認証の
     az storage blob upload -c \$web --account-name <storage account name> -f settings.js -n settings.js
     ```
 
+
 ## <a name="test-the-application"></a>アプリケーションをテストする
 
 1. ブラウザーでアプリケーションを開きます。 **[ログイン]** をクリックしてログインします。
@@ -88,6 +90,7 @@ Azure App Service 認証は、 Azure 関数アプリでターン キー認証の
 1. 画像ファイルを選択してアップロードします。
 
     ![サインイン ページ](media/functions-first-serverless-web-app/6-aad-auth.png)
+    
 
 ## <a name="summary"></a>まとめ
 
