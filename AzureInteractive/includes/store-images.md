@@ -16,13 +16,13 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/26/2018
 ms.locfileid: "40079466"
 ---
-Azure Cosmos DB は、Microsoft のサーバーレスなグローバル分散型マルチモデルのデータベースです。本章では、 Azure Functions を使用し、画像のメタデータを JSON ドキュメントとして Cosmos DB に格納および取得する方法を学習します。
+Azure Cosmos DB は、Microsoft のサーバーレスなグローバル分散型マルチモデルのデータベースです。本章では、Azure Functions を使用し、画像のメタデータを JSON ドキュメントとして Cosmos DB に格納および取得する方法を学習します。
 
 ## <a name="create-a-cosmos-db-account-database-and-collection"></a>Cosmos DB アカウントとデータベースおよびコレクションを作成する
 
 Cosmos DB アカウントは、 Cosmos DB データベースを含む Azure リソースです。
 
-1. Cloud Shell にまだサインインしていることを確認してください。そうでない場合は、**[Enter focus mode]\(フォーカス モードにする\)** を選択し、 Cloud Shell ウィンドウを開きます。
+1. Cloud Shell にまだサインインしていることを確認してください。そうでない場合は、**[Enter focus mode]\(フォーカス モードにする\)** を選択し、Cloud Shell ウィンドウを開きます。
 
 1. このチュートリアルの他のリソースと同じリソース グループ内に、一意の名前を持つ Cosmos DB アカウントを作成します。
 
@@ -36,7 +36,7 @@ Cosmos DB アカウントは、 Cosmos DB データベースを含む Azure リ�
     az cosmosdb database create -g first-serverless-app -n <cosmos db account name> --db-name imagesdb
     ```
 
-1. データベースが作成されたら、 400 要求ユニット (RU) のスループットで、そのデータベースに **images** という名前の新しいコレクションを作成します。
+1. データベースが作成されたら、400 要求ユニット (RU) のスループットで、そのデータベースに **images** という名前の新しいコレクションを作成します。
 
     ```azurecli
     az cosmosdb collection create -g first-serverless-app -n <cosmos db account name> --db-name imagesdb --collection-name images --throughput 400
@@ -108,7 +108,7 @@ Cosmos DB の出力バインディングを使用すると、 Azure Functions �
 
 1. コード ウィンドウ下部の **[ログ]** をクリックし、ログ パネルを展開します。
 
-1. **[Save]** をクリックします。関数が正常に保存され、エラーがないことを、ログ パネルで確認します。
+1. **[保存]** をクリックします。関数が正常に保存され、エラーがないことをログ パネルで確認します。
 
 
 ## <a name="create-a-function-to-list-images-from-cosmos-db"></a>Cosmos DB の画像を一覧表示する関数を作成する
@@ -130,7 +130,7 @@ Cosmos DB の出力バインディングを使用すると、 Azure Functions �
 
 1. 新しい関数が作成されたら、左側のナビゲーションの関数名の下にある **[統合]** をクリックします。
 
-1. **[新しい入力]** をクリックし、 **[Azure Cosmos DB]** を選択します。
+1. **[新規入力]** をクリックし、 **[Azure Cosmos DB]** を選択します。
 
     ![[新しい入力] を選択する](media/functions-first-serverless-web-app/4-new-input.jpg)
 
@@ -158,7 +158,7 @@ Cosmos DB の出力バインディングを使用すると、 Azure Functions �
 
 1. コード ウィンドウ下部の **[ログ]** をクリックして、ログ パネルを展開します。
 
-1. **[Save]** をクリックします。関数が正常に保存され、エラーがないことを、ログ パネルで確認します。
+1. **[Save]** をクリックします。関数が正しく保存され、エラーがないことを、ログ パネルで確認します。
 
 
 ## <a name="test-the-application"></a>アプリケーションをテストする
@@ -181,4 +181,4 @@ Cosmos DB の出力バインディングを使用すると、 Azure Functions �
 
 ## <a name="summary"></a>まとめ
 
-この章では、 Cosmos DB アカウントとデータベース、およびコレクションを作成する方法を学習しました。 Cosmos DB のバインディングを使用して、Cosmos DB コレクション内に画像のメタデータを保存および取得する方法も学習しました。次に、 Microsoft Cognitive Services を使用して、アップロードした各画像のキャプションを自動的に生成する方法を学習します。
+この章では、 Cosmos DB アカウントとデータベース、およびコレクションを作成する方法を学習しました。 Cosmos DB のバインディングを使用して、Cosmos DB コレクション内に画像のメタデータを保存および取得する方法を学習しました。次に、 Microsoft Cognitive Services を使用して、アップロードした各画像のキャプションを自動的に生成する方法を学習します。
