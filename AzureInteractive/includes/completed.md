@@ -16,7 +16,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/26/2018
 ms.locfileid: "40079478"
 ---
-Azure サービスを使用して、多彩な機能を備えたサーバーレス アプリケーションを作成できました。
+Azure サービスを使用して、多彩な機能を備えたサーバーレス アプリケーションを作成しました。
 
 ## <a name="clean-up-resources"></a>リソースのクリーンアップ
 
@@ -26,11 +26,12 @@ Azure サービスを使用して、多彩な機能を備えたサーバーレ�
 az group delete --name first-serverless-app
 ```
 
-確認を求められたら「`y`」と入力します。  
+確認を求められたら `y` と入力します。
 
 ## <a name="next-steps"></a>次の手順
 
-このチュートリアルで学習した内容は次のとおりです。
+このチュートリアルでは、以下の内容を学習しました。
+
 > [!div class="checklist"]
 > * 静的な Web サイトとアップロードされた画像がホストされるように Azure Blob Storage を構成する。
 > * Azure Functions を使用して、画像を Azure Blob Storage にアップロードする。
