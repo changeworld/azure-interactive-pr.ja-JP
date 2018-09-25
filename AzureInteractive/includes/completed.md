@@ -33,12 +33,12 @@ az group delete --name first-serverless-app
 このチュートリアルでは、以下の内容を学習しました。
 
 > [!div class="checklist"]
-> * 静的 Web サイトとアップロードされた画像がホストされるように Azure Blob Storage を構成します。
-> * Azure Functions を使用して、画像を Azure Blob Storage にアップロードします。
-> * Azure Functions を使用して、画像のサイズを変更します。
-> * 画像のメタデータを Azure Cosmos DB に格納します。
-> * Cognitive Services Vision API を使用して、画像のキャプションを自動生成します。
-> * Azure Active Directory を使用して、ユーザーを認証することにより、 Web アプリをセキュリティで保護します。
+> * 静的な Web サイトとアップロードされた画像がホストされるように Azure Blob Storage を構成する。
+> * Azure Functions を使用して、画像を Azure Blob Storage にアップロードする。
+> * Azure Functions を使用して、画像のサイズを変更する。
+> * 画像のメタデータを Azure Cosmos DB に格納する。
+> * Cognitive Services Vision API を使用して、画像のキャプションを自動生成する。
+> * Azure Active Directory を使用してユーザーを認証することにより、Web アプリをセキュリティで保護する。
 
 さらに多くのサービスを関数に接続する方法については、Logic Apps のチュートリアルに進んでください。 
 
