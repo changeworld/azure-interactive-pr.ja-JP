@@ -1,4 +1,4 @@
-﻿---
+---
 title: インクルード ファイル
 description: インクルード ファイル
 services: functions
@@ -16,13 +16,13 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/26/2018
 ms.locfileid: "40079466"
 ---
-Azure Cosmos DB は、Microsoft のサーバーレスなグローバル分散型マルチモデルのデータベースです。本章では、Azure Functions を使用し、画像のメタデータを JSON ドキュメントとして Cosmos DB に格納および取得する方法を学習します。
+Azure Cosmos DB は、Microsoft のサーバーレスなグローバル分散型マルチモデルのデータベースです。 本章では、Azure Functions を使用し、画像のメタデータを JSON ドキュメントとして Cosmos DB に格納および取得する方法を学習します。
 
-## <a name="create-a-cosmos-db-account-database-and-collection"></a>Cosmos DB アカウントとデータベースおよびコレクションを作成する
+## <a name="create-a-cosmos-db-account-database-and-collection"></a>Cosmos DB アカウント、データベース、およびコレクションを作成する
 
-Cosmos DB アカウントは、 Cosmos DB データベースを含む Azure リソースです。
+Cosmos DB アカウントは、Cosmos DB データベースを含む Azure リソースです。
 
-1. Cloud Shell にまだサインインしていることを確認してください。そうでない場合は、**[Enter focus mode]\(フォーカス モードにする\)** を選択し、Cloud Shell ウィンドウを開きます。
+1. Cloud Shell に引き続きサインインしていることを確認します。  そうでない場合は、**[Enter focus mode]\(フォーカス モードにする\)** を選択して、Cloud Shell ウィンドウを開きます。 
 
 1. このチュートリアルの他のリソースと同じリソース グループ内に、一意の名前を持つ Cosmos DB アカウントを作成します。
 
@@ -45,15 +45,15 @@ Cosmos DB アカウントは、 Cosmos DB データベースを含む Azure リ�
 
 ## <a name="save-a-document-to-cosmos-db-when-a-thumbnail-is-created"></a>サムネイル作成時にドキュメントを Cosmos DB に保存する
 
-Cosmos DB の出力バインディングを使用すると、 Azure Functions から Cosmos DB コレクション内にドキュメントを作成できます。以下の手順で、 **ResizeImage** 関数の Cosmos DB 出力バインディングを設定し、保存するドキュメント (オブジェクト) を返すようにこの関数を変更します。
+Cosmos DB の出力バインディングを使用すると、Azure Functions から Cosmos DB コレクション内にドキュメントを作成できます。 次の手順で、**ResizeImage** 関数の Cosmos DB 出力バインディングを構成し、保存するドキュメント (オブジェクト) を返すようにこの関数を変更します。
 
 1. Azure Portal で関数アプリを開きます。
 
-1. 左側のナビゲーションで、 **ResizeImage** 関数を展開し、**[統合]** を選択します。
+1. 左側のナビゲーションで、**ResizeImage** 関数を展開し、**[統合]** を選択します。
 
 1. **[出力]** で **[新しい出力]** をクリックします。
 
-1. **[Azure Cosmos DB]** を選択し、 **[選択]** をクリックします。
+1. **[Azure Cosmos DB]** 項目を見つけて選択します。 **[選択]** をクリックします。
 
     ![[新しい出力] を選択する](media/functions-first-serverless-web-app/4-new-output.jpg)
 
@@ -65,7 +65,7 @@ Cosmos DB の出力バインディングを使用すると、 Azure Functions �
     | **データベース名** | imagesdb | 作成したデータベース名を使用します。 |
     | **[コレクション名]** | images | 作成したコレクション名を使用します。 |
 
-1. **[Azure Cosmos DB アカウント接続]** の横にある **[新規]** をクリックします。前のステップで作成した Cosmos DB アカウントを選択します。
+1. **[Azure Cosmos DB アカウント接続]** の横にある **[新規]** をクリックします。 前のステップで作成した Cosmos DB アカウントを選択します。
 
     ![Azure Cosmos DB 出力バインディングの設定を入力する](media/functions-first-serverless-web-app/4-cosmos-db-output.png)
 
@@ -77,7 +77,7 @@ Cosmos DB の出力バインディングを使用すると、 Azure Functions �
 
     1. (C#) 関数の戻り値の型を **void** から **object** に変更します。
 
-    1. (C#) 関数の末尾に以下のコードを追加し、保存するドキュメントを返すようにします。
+    1. (C#) 関数の末尾に次のコード ブロックを追加して、保存するドキュメントを返すようにします。
     
         ```csharp
         return new {
@@ -108,7 +108,7 @@ Cosmos DB の出力バインディングを使用すると、 Azure Functions �
 
 1. コード ウィンドウ下部の **[ログ]** をクリックして、ログ パネルを展開します。
 
-1. **[保存]** をクリックします。関数が正常に保存され、エラーがないことをログ パネルで確認します。
+1. **[Save]** をクリックします。 関数が正しく保存され、エラーがないことを、ログ パネルで確認します。
 
 
 ## <a name="create-a-function-to-list-images-from-cosmos-db"></a>Cosmos DB の画像を一覧表示する関数を作成する
@@ -150,11 +150,11 @@ Cosmos DB の出力バインディングを使用すると、 Azure Functions �
 
 1. **C# を選択した場合**
 
-    1. 関数の名前をクリックしてコード ウィンドウを開き、 **run.csx** のすべてを [**/csharp/GetImages/run.csx**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/GetImages/run.csx) の内容で置き換えます。
+    1. 関数の名前をクリックしてコード ウィンドウを開き、**run.csx** のすべてを [**/csharp/GetImages/run.csx**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/GetImages/run.csx) の内容で置き換えます。
 
 1. **JavaScript を選択した場合**
 
-    1. 関数の名前をクリックしてコード ウィンドウを開き、 **index.js** のすべてを [**/javascript/GetImages/index.js**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/javascript/GetImages/index.js) の内容で置き換えます。
+    1. 関数の名前をクリックしてコード ウィンドウを開き、**index.js** のすべてを [**/javascript/GetImages/index.js**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/javascript/GetImages/index.js) の内容で置き換えます。
 
 1. コード ウィンドウ下部の **[ログ]** をクリックして、ログ パネルを展開します。
 
@@ -163,7 +163,7 @@ Cosmos DB の出力バインディングを使用すると、 Azure Functions �
 
 ## <a name="test-the-application"></a>アプリケーションをテストする
 
-1. ブラウザーでアプリケーションを開きます。画像ファイルを選択し、アップロードします。
+1. ブラウザーでアプリケーションを開きます。 画像ファイルを選択し、アップロードします。
 
 1. 数秒後、新しい画像のサムネイルがこのページに表示されます。
 
@@ -181,4 +181,4 @@ Cosmos DB の出力バインディングを使用すると、 Azure Functions �
 
 ## <a name="summary"></a>まとめ
 
-この章では、 Cosmos DB アカウントとデータベース、およびコレクションを作成する方法を学習しました。 Cosmos DB のバインディングを使用して、Cosmos DB コレクション内に画像のメタデータを保存および取得する方法を学習しました。次に、 Microsoft Cognitive Services を使用して、アップロードした各画像のキャプションを自動的に生成する方法を学習します。
+この章では、 Cosmos DB アカウントとデータベース、およびコレクションを作成する方法を学習しました。 Cosmos DB のバインディングを使用して、Cosmos DB コレクション内に画像のメタデータを保存および取得する方法を学習しました。 次に、 Microsoft Cognitive Services を使用して、アップロードした各画像のキャプションを自動的に生成する方法を学習します。
