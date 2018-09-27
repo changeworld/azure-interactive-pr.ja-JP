@@ -24,7 +24,7 @@ Microsoft Cognitive Services は、開発者がよりインテリジェントな
 
 1. Cloud Shell にまだサインインしていることを確認してください。 そうでない場合は、**[Enter focus mode]\(フォーカス モードにする\)** を選択して、Cloud Shell ウィンドウを開きます。 
 
-1. リソース グループ内で一意の名前を持つ、**ComputerVision** という種類の新しい Cognitive Services アカウントを作成します。 Free レベルの場合は、**F0** を SKU として使用します。 Computer Vision の既存のアカウントが既にある場合は、Standard アカウント (S1) の作成が必要になる場合があります。ただし、これによってコストが発生することがあります。
+1. リソース グループ内で一意の名前を持つ、**ComputerVision** という種類の新しい Cognitive Services アカウントを作成します。 Free レベルの場合は、**F0** を SKU として使用します。 既に Computer Vision のアカウントがある場合は、Standard アカウント (S1) の作成が必要になる場合があります。ただし、これによってコストが発生することがあります。
 
     ```azurecli
     az cognitiveservices account create -g first-serverless-app -n <computer vision account name> --kind ComputerVision --sku F0 -l westcentralus
@@ -75,7 +75,7 @@ Computer Vision API を呼び出すには、URL とキーが必要です。
 
 1. コード ウィンドウ下部の **[ログ]** をクリックして、ログ パネルを展開します。
 
-1. **[Save]** をクリックします。 関数が正常に保存されエラーがないことを、ログ パネルで確認します。
+1. **[保存]** をクリックします。 関数が正常に保存され、エラーがないことを、ログ パネルで確認します
 
 
 ## <a name="test-the-application"></a>アプリケーションをテストする
