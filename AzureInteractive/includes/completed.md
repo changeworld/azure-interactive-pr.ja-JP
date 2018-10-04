@@ -2,21 +2,21 @@
 title: インクルード ファイル
 description: インクルード ファイル
 services: functions
-author: tdykstra
+author: ggailey777
 manager: jeconnoc
 ms.service: multiple
 ms.topic: include
 ms.date: 06/25/2018
-ms.author: tdykstra
+ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: 1c4aaf7afd9fbc54dd34c2cca13a8b74e947c16a
-ms.sourcegitcommit: e721422a57e6deb95245135fd9f4f5677c344d93
+ms.openlocfilehash: a66fcc3a406c79fcf9881ddaaaf8330f5b373043
+ms.sourcegitcommit: 81587470a181e314242c7a97cd0f91c82d4fe232
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "40079478"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47460001"
 ---
-Azure サービスを使用して、多彩な機能を備えたサーバーレス アプリケーションを作成しました。
+Azure サービスを使用して、多彩な機能を備えたサーバーレス アプリケーションを作成できました。
 
 ## <a name="clean-up-resources"></a>リソースのクリーンアップ
 
@@ -33,10 +33,10 @@ az group delete --name first-serverless-app
 このチュートリアルでは、以下の内容を学習しました。
 > [!div class="checklist"]
 > * 静的な Web サイトとアップロードされた画像がホストされるように Azure Blob Storage を構成する。
-> * Azure Functions を使用して、画像を Azure Blob Storage にアップロードする。
-> * Azure Functions を使用して、画像のサイズを変更する。
-> * 画像のメタデータを Azure Cosmos DB に格納する。
-> * Cognitive Services Vision API を使用して、画像のキャプションを自動生成する。
+> * Azure Functions を使用して、画像を Azure Blob Storage にアップロードします。
+> * Azure Functions を使用して、画像のサイズを変更します。
+> * 画像のメタデータを Azure Cosmos DB に格納します。
+> * Cognitive Services Vision API を使用して、画像のキャプションを自動生成します。
 > * Azure Active Directory を使用してユーザーを認証することにより、Web アプリをセキュリティで保護する。
 
 さらに多くのサービスを関数に接続する方法については、Logic Apps のチュートリアルに進んでください。 

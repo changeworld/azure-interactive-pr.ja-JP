@@ -2,21 +2,21 @@
 title: インクルード ファイル
 description: インクルード ファイル
 services: functions
-author: tdykstra
+author: ggailey777
 manager: jeconnoc
 ms.service: multiple
 ms.topic: include
 ms.date: 06/21/2018
-ms.author: tdykstra
+ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: d1f9a07ce3d3b096b498e48b5c4f68c3454b2b37
-ms.sourcegitcommit: e721422a57e6deb95245135fd9f4f5677c344d93
+ms.openlocfilehash: 426a7287458a48d1bda220ad1a5f067be2ce77d6
+ms.sourcegitcommit: 81587470a181e314242c7a97cd0f91c82d4fe232
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "40079490"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47460043"
 ---
-Azure App Service 認証は、 Azure 関数アプリでターン キー認証のサポートを可能にします。 Facebook、Twitter、Microsoft アカウント、Google、および Azure Active Directory とシームレスに統合されてます。 App Service 認証を追加して、 Web アプリのバックエンド API を保護します。
+Azure App Service 認証を使用すると、Azure 関数アプリでターン キー認証がサポートされるようになります。 Facebook、Twitter、Microsoft アカウント、Google、および Azure Active Directory とシームレスに統合されます。 Web アプリのバックエンド API を保護するには、App Service 認証を追加します。
 
 ## <a name="enable-app-service-authentication"></a>App Service 認証を有効にする
 
@@ -36,7 +36,7 @@ Azure App Service 認証は、 Azure 関数アプリでターン キー認証の
     | **トークン ストア** | On | App Service でトークンの格納および管理を許可します。 |
     | **[許可される外部リダイレクト URL]** | 作成したアプリケーションの URL。例: https://firstserverlessweb.z4.web.core.windows.net/ | ユーザーが認証された後に App Service からリダイレクトできる URL。 |
 
-1. **[Azure Active Directory]** を選択し **[Azure Active Directory の設定]** を表示します。
+1. **[Azure Active Directory]** を選択して **[Azure Active Directory の設定]** を表示します。
 
     1. **[管理モード]** として **[簡易]** を選択し、以下の値を入力します。
     
@@ -54,17 +54,17 @@ Azure App Service 認証は、 Azure 関数アプリでターン キー認証の
 
 ## <a name="modify-the-web-app-to-enable-authentication"></a>Web アプリを変更して認証を有効にする
 
-1. Cloud Shell で、カレントディレクトリが **www/dist** フォルダーであることを確認します。
+1. Cloud Shell で、現在のディレクトリが **www/dist** フォルダーであることを確認します。
 
     ```azurecli
     cd ~/functions-first-serverless-web-application/www/dist
     ```
 
-1. 関数アプリで認証を有効にするには、以下のコードを **settings.js** に追加します。
+1. 関数アプリで認証を有効にするには、次のコード行を **settings.js** に追加します。
 
     `window.authEnabled = true`
 
-    次のコマンドを使用するか、 Vim などのコマンド ライン エディターを使用して変更を行い、結果を表示します。
+    次のコマンドを使用するか、VIM などのコマンド ライン エディターを使用して、変更を加え結果を表示します。
 
     ```azurecli
     echo "window.authEnabled = true" >> settings.js
@@ -76,7 +76,7 @@ Azure App Service 認証は、 Azure 関数アプリでターン キー認証の
     cat settings.js
     ```
 
-1. このファイルを Blob Storage にアップロードします。
+1. ファイルを Blob Storage にアップロードします。
 
     ```azurecli
     az storage blob upload -c \$web --account-name <storage account name> -f settings.js -n settings.js
@@ -87,11 +87,11 @@ Azure App Service 認証は、 Azure 関数アプリでターン キー認証の
 
 1. ブラウザーでアプリケーションを開きます。 **[ログイン]** をクリックしてログインします。
 
-1. 画像ファイルを選択してアップロードします。
+1. 画像ファイルを選択し、アップロードします。
 
     ![サインイン ページ](media/functions-first-serverless-web-app/6-aad-auth.png)
     
 
 ## <a name="summary"></a>まとめ
 
-本章では、 Azure App Service 認証を使用してアプリケーションに認証を追加する方法を学習しました。
+このモジュールでは、Azure App Service 認証を使用してアプリケーションに認証を追加する方法について説明しました。
