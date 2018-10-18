@@ -6,15 +6,15 @@ author: ggailey777
 manager: jeconnoc
 ms.service: multiple
 ms.topic: include
-ms.date: 06/21/2018
+ms.date: 10/12/2018
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: 51c7d3e64424d499b473f3b138ce249a9cfd0182
-ms.sourcegitcommit: 81587470a181e314242c7a97cd0f91c82d4fe232
+ms.openlocfilehash: 3779c2e130afa7ee8d5879f30a924e258b7a41e9
+ms.sourcegitcommit: fdb43556b8dcf67cb39c18e532b5fab7ac53eaee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47460088"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49315978"
 ---
 作成しているアプリケーションはフォト ギャラリーです。 ここでは、クライアント側 JavaScript を使用して API が呼び出され、画像がアップロードおよび表示されます。 このモジュールでは、時間制限付き URL を生成して画像をアップロードするサーバーレス関数を使用して、API を作成します。 この Web アプリケーションでは、[Blob Storage REST API](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api) を使って Blob Storage に画像をアップロードするために、生成済み URL が使用されます。
 
@@ -44,12 +44,12 @@ az functionapp create -n <function app name> -g first-serverless-app -s <storage
 
 ## <a name="configure-the-function-app"></a>Function App を構成する
 
-このチュートリアルの関数アプリには、Functions ランタイムのバージョン 1.x が必要です。 `FUNCTIONS_WORKER_RUNTIME` アプリケーション設定を `~1` に設定すると、関数アプリが最新の 1.x バージョンに固定されます。 [az functionapp config appsettings set](https://docs.microsoft.com/cli/azure/functionapp/config/appsettings#set) コマンドを使用して、アプリケーション設定を行います。
+このチュートリアルの関数アプリには、Functions ランタイムのバージョン 1.x が必要です。 `FUNCTIONS_EXTENSION_VERSION` アプリケーション設定を `~1` に設定すると、関数アプリが最新の 1.x バージョンに固定されます。 [az functionapp config appsettings set](https://docs.microsoft.com/cli/azure/functionapp/config/appsettings#set) コマンドを使用して、アプリケーション設定を行います。
 
 次の Azure CLI コマンドの `<app_name> は、お使いの関数アプリの名前です。
 
 ```azurecli
-az functionapp config appsettings set --name <function app name> --g first-serverless-app --settings FUNCTIONS_WORKER_RUNTIME=~1
+az functionapp config appsettings set --name <function app name> --g first-serverless-app --settings FUNCTIONS_EXTENSION_VERSION=~1
 ```
 
 ## <a name="create-an-http-triggered-serverless-function"></a>HTTP によってトリガーされるサーバーレス関数を作成する
@@ -173,7 +173,7 @@ Azure portal には、関数の作成と編集だけでなく、関数をテス�
 
 1. **[Save]** をクリックします。
 
-1. C#の場合
+1. C#
 
    1. (C#) `GetUploadUrl` 関数に戻り、**[統合]** タブを選択します。
 
