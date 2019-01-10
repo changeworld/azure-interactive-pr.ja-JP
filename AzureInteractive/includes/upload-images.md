@@ -49,7 +49,7 @@ az functionapp create -n <function app name> -g first-serverless-app -s <storage
 次の Azure CLI コマンドの `<app_name> は、お使いの関数アプリの名前です。
 
 ```azurecli
-az functionapp config appsettings set --name <function app name> --g first-serverless-app --settings FUNCTIONS_EXTENSION_VERSION=~1
+az functionapp config appsettings set --name <function app name> -g first-serverless-app --settings FUNCTIONS_EXTENSION_VERSION=~1
 ```
 
 ## <a name="create-an-http-triggered-serverless-function"></a>HTTP によってトリガーされるサーバーレス関数を作成する
